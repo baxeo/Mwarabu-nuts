@@ -4,16 +4,25 @@ import { connection } from "next/server";
 import {
   BadgeCheck,
   Boxes,
+  Camera,
+  ClipboardCheck,
+  Clock,
   Factory,
+  FileText,
   Globe2,
+  Handshake,
   Leaf,
+  Mail,
+  MapPin,
   MessageCircle,
-  ShoppingBag,
+  PackageSearch,
   ShieldCheck,
+  ShoppingBag,
   Store,
   Truck,
 } from "lucide-react";
 import {
+  cashewGallery,
   journeySteps,
   retailPackages,
   socialPosts,
@@ -22,6 +31,7 @@ import {
   wholesalePriceRanges,
 } from "@/lib/site-data";
 import { getProducts } from "@/lib/product-store";
+import QuoteForm from "@/components/QuoteForm";
 
 const buyerTypes = [
   { icon: Store, title: "Retail", text: "For everyday customers and small purchases." },
@@ -74,14 +84,25 @@ export default async function HomePage() {
             </div>
           </div>
 
-          <div className="flex min-h-[360px] flex-col justify-between rounded-[28px] bg-[#0f3c2f] p-8 text-[#f7f4ee] md:min-h-[480px] md:p-10">
-            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#d4b06a]/20 text-[#d4b06a]">
-              <Globe2 size={26} />
+          <div className="grid gap-3">
+            <div className="relative min-h-[240px] overflow-hidden rounded-[28px] md:min-h-[280px]">
+              <Image
+                src="/images/cashew-ww180.jpg"
+                alt="WW 180 Tanzanian cashew kernels"
+                fill
+                priority
+                unoptimized
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
             </div>
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#d4b06a]">Tanzanian origin</p>
-              <p className="mt-3 text-4xl font-bold">From Tanzania to your market.</p>
-              <p className="mt-4 max-w-md text-base leading-7 text-[#edf3ef]">Direct sourcing, export-ready lots and transparent trade communication.</p>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="relative min-h-[150px] overflow-hidden rounded-[22px]">
+                <Image src="/images/cashew-ww320.jpg" alt="WW 320 cashew kernels" fill unoptimized className="object-cover" sizes="25vw" />
+              </div>
+              <div className="relative min-h-[150px] overflow-hidden rounded-[22px]">
+                <Image src="/images/cashew-warehouse.jpg" alt="Cashew warehouse in Tanzania" fill unoptimized className="object-cover" sizes="25vw" />
+              </div>
             </div>
           </div>
         </div>
@@ -171,7 +192,7 @@ export default async function HomePage() {
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {products.map((product) => (
             <article key={product.id} className="soft-card overflow-hidden">
-              <div className="relative flex h-36 items-center justify-center bg-[#edf7f1] text-[#0f3c2f]">
+              <div className="relative flex h-56 items-center justify-center bg-[#edf7f1] text-[#0f3c2f]">
                 {product.image ? <Image src={product.image} alt={product.name} fill unoptimized className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" /> : <Leaf size={32} strokeWidth={1.5} />}
               </div>
               <div className="p-5">
@@ -215,6 +236,26 @@ export default async function HomePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="section-shell py-12 md:py-16">
+        <div className="mb-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#1a7a4d]">Cashew grades in stock</p>
+          <h2 className="mt-3 text-4xl font-bold text-[#0f3c2f]">See the nuts before you buy.</h2>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
+          {cashewGallery.map((item) => (
+            <article key={item.title} className="soft-card overflow-hidden">
+              <div className="relative h-44">
+                <Image src={item.src} alt={item.title} fill unoptimized className="object-cover" sizes="(max-width: 768px) 100vw, 20vw" />
+              </div>
+              <div className="p-4">
+                <p className="text-lg font-semibold text-[#0f3c2f]">{item.title}</p>
+                <p className="mt-1 text-sm text-[#4b5563]">{item.caption}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -271,11 +312,16 @@ export default async function HomePage() {
                 <li>• Documentation and commercial due diligence review</li>
               </ul>
             </div>
-            <div className="soft-card flex items-center justify-center p-8 text-center">
+            <div className="soft-card overflow-hidden">
+              <div className="relative h-56">
+                <Image src="/images/cashew-packed-blocks.jpg" alt="Vacuum packed cashew lots" fill unoptimized className="object-cover" sizes="50vw" />
+              </div>
+              <div className="flex items-center justify-center p-8 text-center">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#1a7a4d]">Need volume?</p>
                 <h3 className="mt-3 text-3xl font-bold text-[#0f3c2f]">15+ MT? Let&apos;s talk.</h3>
                 <Link href="/export" className="brand-button brand-button-primary mt-6">Request export quotation</Link>
+              </div>
               </div>
             </div>
           </div>
@@ -289,18 +335,24 @@ export default async function HomePage() {
         </div>
 
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-          {journeySteps.map((step, index) => (
+          {journeySteps.map((step, index) => {
+            const Icon = [PackageSearch, ClipboardCheck, FileText, Handshake][index] ?? PackageSearch;
+            return (
             <div key={step.title} className="soft-card p-6">
+              <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-[#edf7f1] text-[#0f3c2f]">
+                <Icon size={18} />
+              </div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#d4b06a]">0{index + 1}</p>
               <h3 className="mt-4 text-2xl font-semibold text-[#0f3c2f]">{step.title}</h3>
               <p className="mt-3 text-sm leading-6 text-[#4b5563]">{step.detail}</p>
             </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
       <section className="bg-[#0f3c2f] py-12 text-[#f7f4ee] md:py-16">
-        <div className="section-shell grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="section-shell grid items-center gap-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#d4b06a]">Quality & sourcing</p>
             <h2 className="mt-3 text-4xl font-bold">Quality you can verify.</h2>
@@ -310,6 +362,9 @@ export default async function HomePage() {
               Serious commercial orders should be based on product specifications, grade, available lots, sample review where appropriate, quantity, documentation and agreed commercial terms.
             </p>
             <p>Actual availability, specifications and commercial terms are confirmed for each inquiry.</p>
+            <div className="relative mt-4 h-64 overflow-hidden rounded-[24px]">
+              <Image src="/images/cashew-warehouse.jpg" alt="Origin warehouse stock of Tanzanian cashews" fill unoptimized className="object-cover" sizes="(max-width: 1024px) 100vw, 60vw" />
+            </div>
           </div>
         </div>
       </section>
@@ -338,8 +393,11 @@ export default async function HomePage() {
         </div>
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {socialPosts.map((post) => (
-            <div key={post.title} className="border-l-2 border-[#1a7a4d] py-2 pl-4">
-              <p className="text-lg font-semibold text-[#0f3c2f]">{post.title}</p>
+            <div key={post.title} className="soft-card overflow-hidden">
+              <div className="relative h-48">
+                <Image src={post.image} alt={post.title} fill unoptimized className="object-cover" sizes="(max-width: 768px) 100vw, 25vw" />
+              </div>
+              <p className="p-4 text-lg font-semibold text-[#0f3c2f]">{post.title}</p>
             </div>
           ))}
         </div>
@@ -365,13 +423,7 @@ export default async function HomePage() {
                 </a>
               </div>
             </div>
-            <form className="grid gap-4 md:grid-cols-2">
-              <input className="rounded-xl border border-[#dfe7e1] bg-white px-3 py-3 text-sm" placeholder="Full name" />
-              <input className="rounded-xl border border-[#dfe7e1] bg-white px-3 py-3 text-sm" placeholder="Company" />
-              <input className="rounded-xl border border-[#dfe7e1] bg-white px-3 py-3 text-sm md:col-span-2" placeholder="Business email" />
-              <input className="rounded-xl border border-[#dfe7e1] bg-white px-3 py-3 text-sm md:col-span-2" placeholder="Product, quantity and destination" />
-              <button type="submit" className="brand-button brand-button-primary md:col-span-2 justify-center">Submit inquiry</button>
-            </form>
+            <QuoteForm />
           </div>
         </div>
       </section>
@@ -382,11 +434,11 @@ export default async function HomePage() {
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#1a7a4d]">Contact</p>
             <h2 className="mt-3 text-4xl font-bold text-[#0f3c2f]">Talk to the Mwarabu Nuts team.</h2>
             <div className="mt-6 space-y-3 text-base text-[#374151]">
-              <p><span className="font-semibold text-[#0f3c2f]">WhatsApp:</span> <a href="https://wa.me/255712935493">+255 712 935 493</a></p>
-              <p><span className="font-semibold text-[#0f3c2f]">Email:</span> <a href="mailto:trade@mwarabunuts.com">trade@mwarabunuts.com</a></p>
-              <p><span className="font-semibold text-[#0f3c2f]">Instagram:</span> <a href="https://www.instagram.com/mwarabu_nuts/" target="_blank" rel="noreferrer">@mwarabu_nuts</a></p>
-              <p><span className="font-semibold text-[#0f3c2f]">Location:</span> Tanzania</p>
-              <p><span className="font-semibold text-[#0f3c2f]">Business hours:</span> Mon - Sat: 8:00 AM - 6:00 PM EAT</p>
+              <p className="flex items-center gap-2"><MessageCircle size={18} className="text-[#1a7a4d]" /><span className="font-semibold text-[#0f3c2f]">WhatsApp:</span> <a href="https://wa.me/255712935493">+255 712 935 493</a></p>
+              <p className="flex items-center gap-2"><Mail size={18} className="text-[#1a7a4d]" /><span className="font-semibold text-[#0f3c2f]">Email:</span> <a href="mailto:trade@mwarabunuts.com">trade@mwarabunuts.com</a></p>
+              <p className="flex items-center gap-2"><Camera size={18} className="text-[#1a7a4d]" /><span className="font-semibold text-[#0f3c2f]">Instagram:</span> <a href="https://www.instagram.com/mwarabu_nuts/" target="_blank" rel="noreferrer">@mwarabu_nuts</a></p>
+              <p className="flex items-center gap-2"><MapPin size={18} className="text-[#1a7a4d]" /><span className="font-semibold text-[#0f3c2f]">Location:</span> Tanzania</p>
+              <p className="flex items-center gap-2"><Clock size={18} className="text-[#1a7a4d]" /><span className="font-semibold text-[#0f3c2f]">Business hours:</span> Mon - Sat: 8:00 AM - 6:00 PM EAT</p>
             </div>
           </div>
           <div className="soft-card p-6">

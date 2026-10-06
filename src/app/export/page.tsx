@@ -1,6 +1,8 @@
 'use client';
 
+import Image from "next/image";
 import { useState } from "react";
+import { FileCheck, Globe2, Package, Ship } from "lucide-react";
 
 export default function ExportPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -27,6 +29,9 @@ export default function ExportPage() {
     <div className="section-shell py-12 md:py-20">
       <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
+          <div className="relative mb-8 min-h-[220px] overflow-hidden rounded-[24px]">
+            <Image src="/images/cashew-warehouse.jpg" alt="Export warehouse stock of Tanzanian cashews" fill unoptimized className="object-cover" sizes="50vw" />
+          </div>
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#1a7a4d]">
             Export & bulk cashew
           </p>
@@ -39,17 +44,18 @@ export default function ExportPage() {
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             {[
-              "15 MT",
-              "20 MT",
-              "25 MT",
-              "50 MT",
-              "100 MT+",
-              "Container quantities",
-              "Repeat contracts",
-              "Seasonal supply",
-            ].map((item) => (
-              <div key={item} className="rounded-2xl border border-[#dfe7e1] bg-[#f8faf8] px-4 py-3 text-sm font-medium text-[#0f3c2f]">
-                {item}
+              { label: "15 MT", icon: Package },
+              { label: "20 MT", icon: Package },
+              { label: "25 MT", icon: Package },
+              { label: "50 MT", icon: Ship },
+              { label: "100 MT+", icon: Ship },
+              { label: "Container quantities", icon: Ship },
+              { label: "Repeat contracts", icon: FileCheck },
+              { label: "Seasonal supply", icon: Globe2 },
+            ].map(({ label, icon: Icon }) => (
+              <div key={label} className="flex items-center gap-3 rounded-2xl border border-[#dfe7e1] bg-[#f8faf8] px-4 py-3 text-sm font-medium text-[#0f3c2f]">
+                <Icon size={16} />
+                {label}
               </div>
             ))}
           </div>

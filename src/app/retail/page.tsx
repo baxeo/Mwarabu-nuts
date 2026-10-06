@@ -19,6 +19,15 @@ export default async function RetailPage() {
         <Link href="/products" className="brand-button brand-button-primary">Browse products</Link>
       </div>
 
+      <div className="mb-10 grid gap-4 md:grid-cols-3">
+        <div className="relative min-h-[180px] overflow-hidden rounded-[24px] md:col-span-2">
+          <Image src="/images/cashew-ww180.jpg" alt="Retail cashew packs" fill unoptimized className="object-cover" sizes="66vw" />
+        </div>
+        <div className="relative min-h-[180px] overflow-hidden rounded-[24px]">
+          <Image src="/images/cashew-ww450.jpg" alt="WW 450 cashew kernels" fill unoptimized className="object-cover" sizes="33vw" />
+        </div>
+      </div>
+
       <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
         <div className="soft-card p-6">
           <h2 className="mb-5 text-2xl font-semibold text-[#0f3c2f]">Popular retail sizes</h2>
@@ -57,7 +66,7 @@ export default async function RetailPage() {
       <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {products.slice(0, 3).map((product) => (
           <article key={product.id} className="soft-card overflow-hidden">
-            <div className="relative flex h-32 items-center justify-center bg-[#edf7f1] text-[#0f3c2f]">
+            <div className="relative flex h-48 items-center justify-center bg-[#edf7f1] text-[#0f3c2f]">
               {product.image ? <Image src={product.image} alt={product.name} fill unoptimized className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" /> : <Leaf size={30} strokeWidth={1.5} />}
             </div>
             <div className="p-5">

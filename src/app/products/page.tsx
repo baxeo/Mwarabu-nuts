@@ -27,7 +27,7 @@ export default async function ProductsPage() {
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {products.map((product) => (
           <article key={product.id} className="soft-card overflow-hidden">
-            <div className="relative flex h-36 items-center justify-center bg-[#edf7f1] text-[#0f3c2f]">
+            <div className="relative flex h-56 items-center justify-center bg-[#edf7f1] text-[#0f3c2f]">
               {product.image ? <Image src={product.image} alt={product.name} fill unoptimized className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" /> : <Leaf size={32} strokeWidth={1.5} />}
             </div>
             <div className="space-y-4 p-5">

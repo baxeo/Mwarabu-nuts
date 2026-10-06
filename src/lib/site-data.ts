@@ -23,6 +23,7 @@ export const products: Product[] = [
     slug: "raw-cashew-nuts-rcn",
     name: "Raw Cashew Nuts (RCN)",
     category: "Raw cashew",
+    image: "/images/cashew-warehouse.jpg",
     stockQuantity: "Seasonal supply",
     description:
       "Tanzania-origin raw cashew nuts for processors and industrial buyers seeking consistent supply and traceable origin.",
@@ -41,6 +42,7 @@ export const products: Product[] = [
     slug: "whole-cashew-kernels",
     name: "Whole Cashew Kernels",
     category: "Whole kernels",
+    image: "/images/cashew-ww320.jpg",
     stockQuantity: "Current lots available",
     description:
       "Premium whole kernels for retail, gifting, food service, and export. Selected for appearance, size, and consistency.",
@@ -59,6 +61,7 @@ export const products: Product[] = [
     slug: "broken-cashew-kernels-pieces",
     name: "Broken Cashew Kernels / Pieces",
     category: "Broken pieces",
+    image: "/images/cashew-ww450.jpg",
     stockQuantity: "Available on request",
     description:
       "Kitchen-ready broken kernels for bakery, confectionery, nut butters, and food production with reliable dosing.",
@@ -77,6 +80,7 @@ export const products: Product[] = [
     slug: "roasted-cashew-nuts",
     name: "Roasted Cashew Nuts",
     category: "Roasted nuts",
+    image: "/images/cashew-ww180.jpg",
     stockQuantity: "Retail and wholesale availability",
     description:
       "Ready-to-sell roasted cashews for supermarkets, snack brands, and hospitality customers seeking crunchy, premium taste.",
@@ -95,6 +99,7 @@ export const products: Product[] = [
     slug: "cashew-butter-and-specialty-products",
     name: "Cashew Butter & Specialty Products",
     category: "Other cashew products",
+    image: "/images/cashew-packed-blocks.jpg",
     stockQuantity: "Project-based requests",
     description:
       "Additional cashew-based products for value-added food manufacturing, ingredient sourcing and private-label programs.",
@@ -169,10 +174,18 @@ export const journeySteps = [
 ];
 
 export const socialPosts = [
-  { title: "Product updates" },
-  { title: "Stock updates" },
-  { title: "Quality inspection" },
-  { title: "Customer activity" },
+  { title: "WW 180 kernels", image: "/images/cashew-ww180.jpg" },
+  { title: "WW 320 kernels", image: "/images/cashew-ww320.jpg" },
+  { title: "WW 450 kernels", image: "/images/cashew-ww450.jpg" },
+  { title: "Packed wholesale lots", image: "/images/cashew-packed-blocks.jpg" },
+];
+
+export const cashewGallery = [
+  { src: "/images/cashew-ww180.jpg", title: "WW 180", caption: "Large premium whole kernels" },
+  { src: "/images/cashew-ww320.jpg", title: "WW 320", caption: "Export-grade whole kernels" },
+  { src: "/images/cashew-ww450.jpg", title: "WW 450", caption: "Value whole kernels" },
+  { src: "/images/cashew-packed-blocks.jpg", title: "Vacuum packed", caption: "Wholesale-ready packing" },
+  { src: "/images/cashew-warehouse.jpg", title: "Warehouse stock", caption: "Tanzanian origin lots" },
 ];
 
 export const contactInfo = {

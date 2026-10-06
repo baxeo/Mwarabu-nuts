@@ -24,7 +24,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
       </div>
 
       <div className="max-w-4xl space-y-6">
-          <div className="relative flex h-52 items-center justify-center overflow-hidden rounded-lg bg-[#edf7f1] text-[#0f3c2f]">
+          <div className="relative h-80 overflow-hidden rounded-2xl bg-[#edf7f1] text-[#0f3c2f]">
             {product.image ? <Image src={product.image} alt={product.name} fill unoptimized className="object-cover" sizes="(max-width: 768px) 100vw, 800px" /> : <Leaf size={40} strokeWidth={1.5} />}
           </div>
           <div>
@@ -68,7 +68,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             <Link href="/retail" className="brand-button brand-button-primary">Buy now</Link>
             <Link href="/wholesale" className="brand-button brand-button-secondary">Request wholesale quote</Link>
             <Link href="/export" className="brand-button brand-button-primary">Request export quote</Link>
-            <a href="https://wa.me/255712935493?text=Hello%20Mwarabu%20Nuts%2C%20I%20am%20interested%20in%20product%20name%20for%20sample%20and%20pricing." className="brand-button brand-button-secondary">WhatsApp us</a>
+            <a href={`https://wa.me/255712935493?text=${encodeURIComponent(`Hello Mwarabu Nuts, I am interested in ${product.name} for sample and pricing.`)}`} className="brand-button brand-button-secondary">WhatsApp us</a>
           </div>
 
           <p className="text-xs text-[#6b7280]">
