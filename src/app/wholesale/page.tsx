@@ -27,7 +27,7 @@ export default function WholesalePage() {
         </div>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <div id="price-tiers" className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {wholesalePriceRanges.map((item) => (
           <article key={item.quantity} className="soft-card p-6">
             <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-[#edf7f1] text-[#0f3c2f]">
@@ -49,7 +49,7 @@ export default function WholesalePage() {
         ))}
       </div>
 
-      <div className="mt-12 soft-card p-6 md:p-8">
+      <div id="business-buyers" className="mt-12 soft-card p-6 md:p-8">
         <h2 className="text-2xl font-semibold text-[#0f3c2f]">Who we serve</h2>
         <div className="mt-5 flex flex-wrap gap-3 text-sm font-medium">
           {[

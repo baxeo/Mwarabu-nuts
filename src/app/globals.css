@@ -111,3 +111,110 @@ select {
     animation-iteration-count: 1 !important;
   }
 }
+
+.fob-price-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #111;
+  font-family: "Times New Roman", serif;
+}
+
+.fob-price-table th,
+.fob-price-table td {
+  border: 2px solid #111;
+  padding: 0.45rem 0.65rem;
+}
+
+.fob-price-table th {
+  background: #fff200;
+  text-align: left;
+}
+
+.fob-price-table td:first-child {
+  width: 4rem;
+  text-align: right;
+}
+
+.fob-price-table td:last-child {
+  width: 8rem;
+  text-align: right;
+}
+
+.fob-price-remarks {
+  border: 2px solid #111;
+  color: #111;
+  font-family: "Times New Roman", serif;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 14mm;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  .fob-price-document,
+  .fob-price-document * {
+    visibility: visible !important;
+  }
+
+  .fob-price-document {
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #000 !important;
+    font-family: "Times New Roman", serif !important;
+  }
+
+  .fob-price-controls {
+    display: none !important;
+  }
+
+  .fob-price-title {
+    margin-bottom: 0.75rem !important;
+    color: #000 !important;
+    font-family: "Times New Roman", serif !important;
+    font-size: 20pt !important;
+  }
+
+  .fob-price-table {
+    font-size: 12pt;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .fob-price-table th,
+  .fob-price-table td {
+    border: 1.5pt solid #000 !important;
+    padding: 0.3rem 0.45rem;
+  }
+
+  .fob-price-table th {
+    background: #fff200 !important;
+    color: #000 !important;
+  }
+
+  .fob-price-remarks {
+    margin-top: 1.25rem !important;
+    padding: 0.45rem !important;
+    border: 1.5pt solid #000 !important;
+    color: #000 !important;
+    font-size: 11pt;
+  }
+
+  .fob-price-remarks p {
+    margin: 0.2rem 0 !important;
+  }
+}

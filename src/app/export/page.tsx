@@ -42,7 +42,7 @@ export default function ExportPage() {
             For importers, distributors, processors, manufacturers and institutional buyers seeking Tanzanian cashews at commercial scale.
           </p>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <div id="volume-options" className="mt-8 grid gap-4 sm:grid-cols-2">
             {[
               { label: "15 MT", icon: Package },
               { label: "20 MT", icon: Package },
@@ -60,7 +60,7 @@ export default function ExportPage() {
             ))}
           </div>
 
-          <div className="mt-8 soft-card p-5 text-sm leading-7 text-[#374151]">
+          <div id="buyer-support" className="mt-8 soft-card p-5 text-sm leading-7 text-[#374151]">
             <p className="font-semibold text-[#0f3c2f]">Export buyer support</p>
             <ul className="mt-3 space-y-2">
               <li>• Origin and quality assurance</li>
@@ -72,7 +72,7 @@ export default function ExportPage() {
           </div>
         </div>
 
-        <div className="soft-card p-6 md:p-8">
+        <div id="inquiry-form" className="soft-card p-6 md:p-8">
           <h2 className="text-2xl font-semibold text-[#0f3c2f]">Export inquiry form</h2>
           {submitted ? (
             <div className="mt-6 rounded-2xl border border-[#d7f0dc] bg-[#edf9f1] p-5 text-sm text-[#0f3c2f]">

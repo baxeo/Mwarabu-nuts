@@ -29,7 +29,7 @@ export default async function ProductsPage() {
         </div>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <div id="product-catalogue" className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {products.map((product) => (
           <article key={product.id} className="soft-card overflow-hidden">
             <div className="relative flex h-56 items-center justify-center bg-[#edf7f1] text-[#0f3c2f]">

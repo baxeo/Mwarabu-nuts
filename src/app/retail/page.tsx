@@ -37,7 +37,7 @@ export default async function RetailPage() {
       </div>
 
       <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-        <div className="soft-card p-6">
+        <div id="pack-sizes" className="soft-card p-6">
           <h2 className="mb-5 text-2xl font-semibold text-[#0f3c2f]">Popular retail sizes</h2>
           <div className="space-y-3">
             {retailPackages.map((pkg) => (
@@ -60,7 +60,7 @@ export default async function RetailPage() {
           </div>
         </div>
 
-        <div className="soft-card p-6">
+        <div id="customer-journey" className="soft-card p-6">
           <h2 className="text-2xl font-semibold text-[#0f3c2f]">Customer journey</h2>
           <ul className="mt-5 space-y-4 text-sm leading-6 text-[#374151]">
             <li className="flex items-start gap-2"><ShoppingBag size={16} className="mt-0.5 text-[#1a7a4d]" /> Browse products and see the standard {standardKgPriceLabel} retail rate.</li>
@@ -71,7 +71,7 @@ export default async function RetailPage() {
         </div>
       </div>
 
-      <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <div id="retail-products" className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {products.slice(0, 3).map((product) => (
           <article key={product.id} className="soft-card overflow-hidden">
             <div className="relative flex h-48 items-center justify-center bg-[#edf7f1] text-[#0f3c2f]">

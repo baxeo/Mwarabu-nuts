@@ -21,7 +21,7 @@ export default function GalleryPage() {
         </p>
       </div>
 
-      <div className="mb-10 grid gap-4 md:grid-cols-3">
+      <div id="stock-overview" className="mb-10 grid gap-4 md:grid-cols-3">
         <div className="soft-card flex items-start gap-3 p-5">
           <Camera className="mt-1 text-[#1a7a4d]" size={20} />
           <div>
@@ -45,7 +45,9 @@ export default function GalleryPage() {
         </div>
       </div>
 
-      <GalleryGrid />
+      <div id="stock-photos">
+        <GalleryGrid />
+      </div>
 
       <div className="mt-10 flex flex-wrap gap-3">
         <Link href="/retail" className="brand-button brand-button-primary">Shop retail</Link>

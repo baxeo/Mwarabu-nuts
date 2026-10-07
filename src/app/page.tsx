@@ -180,7 +180,7 @@ export default async function HomePage() {
         </p>
       </section>
 
-      <section className="section-shell py-12 md:py-16">
+      <section id="featured-products" className="section-shell py-12 md:py-16">
         <div className="mb-8 flex items-end justify-between gap-3">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#1a7a4d]">Featured products</p>
@@ -241,7 +241,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="section-shell py-12 md:py-16">
+      <section id="cashew-gallery" className="section-shell py-12 md:py-16">
         <div className="mb-8 flex items-end justify-between gap-3">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#1a7a4d]">Cashew gallery</p>
@@ -273,7 +273,7 @@ export default async function HomePage() {
 
       <section className="section-shell py-12 md:py-16">
         <div className="grid gap-6 lg:grid-cols-[1fr_1fr]">
-          <div className="soft-card p-8">
+          <div id="retail-info" className="soft-card p-8">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#1a7a4d]">Retail shop</p>
             <h2 className="mt-3 text-4xl font-bold text-[#0f3c2f]">Simple buying for households and gifting.</h2>
             <p className="mt-4 text-base leading-7 text-[#4b5563]">
@@ -290,7 +290,7 @@ export default async function HomePage() {
             <Link href="/retail" className="brand-button brand-button-primary mt-6">Shop retail</Link>
           </div>
 
-          <div className="soft-card p-8">
+          <div id="wholesale-info" className="soft-card p-8">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#1a7a4d]">Wholesale</p>
             <h2 className="mt-3 text-4xl font-bold text-[#0f3c2f]">Clear pricing for business buyers.</h2>
             <p className="mt-4 text-base leading-7 text-[#4b5563]">
@@ -309,7 +309,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="bg-[#f1ece2] py-12 md:py-16">
+      <section id="export-supply" className="bg-[#f1ece2] py-12 md:py-16">
         <div className="section-shell">
           <div className="mb-8">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#1a7a4d]">Export 15+ MT</p>

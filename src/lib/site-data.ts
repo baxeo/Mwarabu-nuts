@@ -118,6 +118,24 @@ export const products: Product[] = [
 export const standardKgPriceLabel = "TZS 21,000 / kg";
 export const priceUpdatedOn = "2026-10-07";
 
+export const fobGradePrices = [
+  { grade: "W180", price: 8.95 },
+  { grade: "W210", price: 8.02 },
+  { grade: "W240", price: 7.8 },
+  { grade: "W320", price: 7.45 },
+  { grade: "W450", price: 7 },
+  { grade: "SPOT", price: 7 },
+  { grade: "SW/SPLIT", price: 6.06 },
+  { grade: "BUTTS", price: 6.06 },
+  { grade: "LWP", price: 4.6 },
+  { grade: "SWP", price: 4.6 },
+  { grade: "BROWN", price: 5.69 },
+  { grade: "BB1", price: 2.6 },
+  { grade: "BB2", price: 2.96 },
+  { grade: "NW", price: 5.98 },
+  { grade: "HUSK", price: 0.05 },
+];
+
 export const whatsappBase = "https://wa.me/255712935493";
 export const whatsappLink = (text: string) => `${whatsappBase}?text=${encodeURIComponent(text)}`;
 
@@ -239,6 +257,7 @@ export const navItems = [
   { label: "Home", href: "/" },
   { label: "Products", href: "/products" },
   { label: "Gallery", href: "/gallery" },
+  { label: "FOB Prices", href: "/fob-prices" },
   { label: "Retail", href: "/retail" },
   { label: "Wholesale", href: "/wholesale" },
   { label: "Export", href: "/export" },
