@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { connection } from "next/server";
-import { Leaf } from "lucide-react";
+import { Images, Leaf } from "lucide-react";
 import { getProducts } from "@/lib/product-store";
 
 export default async function ProductsPage() {
@@ -19,9 +19,14 @@ export default async function ProductsPage() {
             Cashew products for every market.
           </h1>
         </div>
-        <Link href="/export" className="brand-button brand-button-primary">
-          Request export quote
-        </Link>
+        <div className="flex flex-col gap-3 sm:flex-row">
+          <Link href="/gallery" className="brand-button brand-button-secondary">
+            <Images size={16} className="mr-2" /> View stock gallery
+          </Link>
+          <Link href="/export" className="brand-button brand-button-primary">
+            Request export quote
+          </Link>
+        </div>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">

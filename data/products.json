@@ -11,11 +11,11 @@
     "origin": "Tanzania",
     "processing": "Raw, natural",
     "availability": "Seasonal supply / current lots available",
-    "retailPrice": "TZS 18,000 / kg",
-    "wholesaleFrom": "TZS 3,800 / kg",
+    "retailPrice": "TZS 21,000 / kg",
+    "wholesaleFrom": "TZS 21,000 / kg",
     "exportMOQ": "15 MT",
     "packaging": "PP bags / bulk container lots",
-    "lastUpdated": "2026-10-04"
+    "lastUpdated": "2026-10-07"
   },
   {
     "id": "2",
@@ -29,11 +29,11 @@
     "origin": "Tanzania",
     "processing": "Roasted / natural / steamed",
     "availability": "Current lots available",
-    "retailPrice": "TZS 28,000 / kg",
-    "wholesaleFrom": "TZS 6,900 / kg",
+    "retailPrice": "TZS 21,000 / kg",
+    "wholesaleFrom": "TZS 21,000 / kg",
     "exportMOQ": "15 MT",
     "packaging": "Vacuum packs / 10kg cartons / 25kg packs",
-    "lastUpdated": "2026-10-04"
+    "lastUpdated": "2026-10-07"
   },
   {
     "id": "3",
@@ -47,11 +47,11 @@
     "origin": "Tanzania",
     "processing": "Sorted / graded",
     "availability": "Available on request",
-    "retailPrice": "TZS 18,500 / kg",
-    "wholesaleFrom": "TZS 4,400 / kg",
+    "retailPrice": "TZS 21,000 / kg",
+    "wholesaleFrom": "TZS 21,000 / kg",
     "exportMOQ": "15 MT",
     "packaging": "25kg / 50kg / custom packs",
-    "lastUpdated": "2026-10-04"
+    "lastUpdated": "2026-10-07"
   },
   {
     "id": "4",
@@ -65,11 +65,11 @@
     "origin": "Tanzania",
     "processing": "Roasted / seasoned",
     "availability": "Retail and wholesale availability",
-    "retailPrice": "TZS 32,000 / kg",
-    "wholesaleFrom": "TZS 7,750 / kg",
+    "retailPrice": "TZS 21,000 / kg",
+    "wholesaleFrom": "TZS 21,000 / kg",
     "exportMOQ": "15 MT",
     "packaging": "Retail packs / 10kg boxes / bulk packs",
-    "lastUpdated": "2026-10-04"
+    "lastUpdated": "2026-10-07"
   },
   {
     "id": "5",
@@ -83,10 +83,10 @@
     "origin": "Tanzania",
     "processing": "Value-added / custom",
     "availability": "Project-based requests",
-    "retailPrice": "TZS 25,000 / kg",
-    "wholesaleFrom": "TZS 5,800 / kg",
+    "retailPrice": "TZS 21,000 / kg",
+    "wholesaleFrom": "TZS 21,000 / kg",
     "exportMOQ": "15 MT",
     "packaging": "Custom packing / private label options",
-    "lastUpdated": "2026-10-04"
+    "lastUpdated": "2026-10-07"
   }
 ]

@@ -36,6 +36,8 @@ function Footer() {
           <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#d4b06a]">Quick links</h3>
           <ul className="mt-4 space-y-3 text-sm text-[#edf3ef]">
             <li><Link href="/products">Products</Link></li>
+            <li><Link href="/gallery">Gallery</Link></li>
+            <li><Link href="/retail">Retail</Link></li>
             <li><Link href="/wholesale">Wholesale</Link></li>
             <li><Link href="/export">Export 15+ MT</Link></li>
             <li><Link href="/#contact">Contact</Link></li>

@@ -12,6 +12,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
 }
 
 body {
@@ -39,7 +40,7 @@ select {
 }
 
 .section-shell {
-  width: min(1180px, calc(100% - 1.5rem));
+  width: min(1180px, calc(100% - 2rem));
   margin-inline: auto;
 }
 
@@ -50,10 +51,11 @@ select {
   box-shadow: 0 14px 34px rgba(15, 60, 47, 0.06);
 }
 
-.brand-button {
+.brand-button:not(.hidden) {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-height: 44px;
   border-radius: 9999px;
   padding: 0.9rem 1.35rem;
   font-size: 0.85rem;
@@ -79,8 +81,33 @@ select {
   color: var(--forest);
 }
 
+.brand-button.flex-1 {
+  width: auto;
+  min-width: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
 @media (max-width: 768px) {
   .brand-button {
     width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }

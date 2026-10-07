@@ -31,11 +31,11 @@ export const products: Product[] = [
     origin: "Tanzania",
     processing: "Raw, natural",
     availability: "Seasonal supply / current lots available",
-    retailPrice: "TZS 18,000 / kg",
-    wholesaleFrom: "TZS 3,800 / kg",
+    retailPrice: "TZS 21,000 / kg",
+    wholesaleFrom: "TZS 21,000 / kg",
     exportMOQ: "15 MT",
     packaging: "PP bags / bulk container lots",
-    lastUpdated: "2026-10-04",
+    lastUpdated: "2026-10-07",
   },
   {
     id: "2",
@@ -50,11 +50,11 @@ export const products: Product[] = [
     origin: "Tanzania",
     processing: "Roasted / natural / steamed",
     availability: "Current lots available",
-    retailPrice: "TZS 28,000 / kg",
-    wholesaleFrom: "TZS 6,900 / kg",
+    retailPrice: "TZS 21,000 / kg",
+    wholesaleFrom: "TZS 21,000 / kg",
     exportMOQ: "15 MT",
     packaging: "Vacuum packs / 10kg cartons / 25kg packs",
-    lastUpdated: "2026-10-04",
+    lastUpdated: "2026-10-07",
   },
   {
     id: "3",
@@ -69,11 +69,11 @@ export const products: Product[] = [
     origin: "Tanzania",
     processing: "Sorted / graded",
     availability: "Available on request",
-    retailPrice: "TZS 18,500 / kg",
-    wholesaleFrom: "TZS 4,400 / kg",
+    retailPrice: "TZS 21,000 / kg",
+    wholesaleFrom: "TZS 21,000 / kg",
     exportMOQ: "15 MT",
     packaging: "25kg / 50kg / custom packs",
-    lastUpdated: "2026-10-04",
+    lastUpdated: "2026-10-07",
   },
   {
     id: "4",
@@ -88,11 +88,11 @@ export const products: Product[] = [
     origin: "Tanzania",
     processing: "Roasted / seasoned",
     availability: "Retail and wholesale availability",
-    retailPrice: "TZS 32,000 / kg",
-    wholesaleFrom: "TZS 7,750 / kg",
+    retailPrice: "TZS 21,000 / kg",
+    wholesaleFrom: "TZS 21,000 / kg",
     exportMOQ: "15 MT",
     packaging: "Retail packs / 10kg boxes / bulk packs",
-    lastUpdated: "2026-10-04",
+    lastUpdated: "2026-10-07",
   },
   {
     id: "5",
@@ -107,32 +107,35 @@ export const products: Product[] = [
     origin: "Tanzania",
     processing: "Value-added / custom",
     availability: "Project-based requests",
-    retailPrice: "TZS 25,000 / kg",
-    wholesaleFrom: "TZS 5,800 / kg",
+    retailPrice: "TZS 21,000 / kg",
+    wholesaleFrom: "TZS 21,000 / kg",
     exportMOQ: "15 MT",
     packaging: "Custom packing / private label options",
-    lastUpdated: "2026-10-04",
+    lastUpdated: "2026-10-07",
   },
 ];
+
+export const standardKgPriceLabel = "TZS 21,000 / kg";
+export const priceUpdatedOn = "2026-10-07";
 
 export const whatsappBase = "https://wa.me/255712935493";
 export const whatsappLink = (text: string) => `${whatsappBase}?text=${encodeURIComponent(text)}`;
 
 export const retailPackages = [
-  { packageName: "250 g", price: "TZS 7,500", availability: "In stock" },
-  { packageName: "500 g", price: "TZS 14,500", availability: "In stock" },
-  { packageName: "1 kg", price: "TZS 28,000", availability: "In stock" },
-  { packageName: "2 kg", price: "TZS 55,000", availability: "In stock" },
-  { packageName: "5 kg", price: "TZS 130,000", availability: "Limited stock" },
+  { packageName: "250 g", price: "TZS 5,250", availability: "In stock" },
+  { packageName: "500 g", price: "TZS 10,500", availability: "In stock" },
+  { packageName: "1 kg", price: "TZS 21,000", availability: "In stock" },
+  { packageName: "2 kg", price: "TZS 42,000", availability: "In stock" },
+  { packageName: "5 kg", price: "TZS 105,000", availability: "In stock" },
 ];
 
 export const wholesalePriceRanges = [
-  { quantity: "10 kg", minOrder: "10 kg", pricePerKg: "TZS 6,900 / kg", packaging: "10kg retail cartons" },
-  { quantity: "25 kg", minOrder: "25 kg", pricePerKg: "TZS 6,500 / kg", packaging: "25kg packs" },
-  { quantity: "50 kg", minOrder: "50 kg", pricePerKg: "TZS 6,200 / kg", packaging: "50kg bags" },
-  { quantity: "100 kg", minOrder: "100 kg", pricePerKg: "TZS 6,000 / kg", packaging: "PP bags" },
-  { quantity: "500 kg", minOrder: "500 kg", pricePerKg: "TZS 5,700 / kg", packaging: "Bulk pack" },
-  { quantity: "1 MT", minOrder: "1 MT", pricePerKg: "TZS 5,500 / kg", packaging: "Container-ready" },
+  { quantity: "10 kg", minOrder: "10 kg", pricePerKg: "TZS 21,000 / kg", packaging: "10kg retail cartons" },
+  { quantity: "25 kg", minOrder: "25 kg", pricePerKg: "TZS 21,000 / kg", packaging: "25kg packs" },
+  { quantity: "50 kg", minOrder: "50 kg", pricePerKg: "TZS 21,000 / kg", packaging: "50kg bags" },
+  { quantity: "100 kg", minOrder: "100 kg", pricePerKg: "TZS 21,000 / kg", packaging: "PP bags" },
+  { quantity: "500 kg", minOrder: "500 kg", pricePerKg: "TZS 21,000 / kg", packaging: "Bulk pack" },
+  { quantity: "1 MT", minOrder: "1 MT", pricePerKg: "TZS 21,000 / kg", packaging: "Container-ready" },
 ];
 
 export const exportBuyerTypes = [
@@ -181,11 +184,31 @@ export const socialPosts = [
 ];
 
 export const cashewGallery = [
-  { src: "/images/cashew-ww180.jpg", title: "WW 180", caption: "Large premium whole kernels" },
-  { src: "/images/cashew-ww320.jpg", title: "WW 320", caption: "Export-grade whole kernels" },
-  { src: "/images/cashew-ww450.jpg", title: "WW 450", caption: "Value whole kernels" },
-  { src: "/images/cashew-packed-blocks.jpg", title: "Vacuum packed", caption: "Wholesale-ready packing" },
-  { src: "/images/cashew-warehouse.jpg", title: "Warehouse stock", caption: "Tanzanian origin lots" },
+  {
+    src: "/images/cashew-ww180.jpg",
+    title: "WW 180",
+    caption: "Large premium whole kernels for gifting, retail and export.",
+  },
+  {
+    src: "/images/cashew-ww320.jpg",
+    title: "WW 320",
+    caption: "Popular export-grade whole kernels for everyday wholesale supply.",
+  },
+  {
+    src: "/images/cashew-ww450.jpg",
+    title: "WW 450",
+    caption: "Value whole kernels for food service and household packs.",
+  },
+  {
+    src: "/images/cashew-packed-blocks.jpg",
+    title: "Vacuum packed lots",
+    caption: "Wholesale-ready vacuum packing for shops and distributors.",
+  },
+  {
+    src: "/images/cashew-warehouse.jpg",
+    title: "Warehouse stock",
+    caption: "Origin warehouse lots of Tanzanian cashews ready for dispatch.",
+  },
 ];
 
 export const contactInfo = {
@@ -215,10 +238,9 @@ export const homePageStats = [
 export const navItems = [
   { label: "Home", href: "/" },
   { label: "Products", href: "/products" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Retail", href: "/retail" },
   { label: "Wholesale", href: "/wholesale" },
-  { label: "Export 15+ MT", href: "/export" },
-  { label: "How It Works", href: "/#how-it-works" },
-  { label: "Our Story", href: "/#our-story" },
+  { label: "Export", href: "/export" },
   { label: "Contact", href: "/#contact" },
 ];

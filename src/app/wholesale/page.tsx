@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Boxes, Building2, Store, UtensilsCrossed } from "lucide-react";
-import { wholesalePriceRanges } from "@/lib/site-data";
+import { standardKgPriceLabel, wholesalePriceRanges } from "@/lib/site-data";
 
 export default function WholesalePage() {
   return (
@@ -13,6 +13,9 @@ export default function WholesalePage() {
         <h1 className="text-4xl font-bold text-[#0f3c2f] md:text-5xl">
           Supply retail, hospitality and distribution partners with confidence.
         </h1>
+        <p className="mt-5 max-w-2xl text-lg text-[#4b5563]">
+          Standard wholesale price is {standardKgPriceLabel} for all listed quantities. Export lots of 15+ MT are quoted separately.
+        </p>
       </div>
 
       <div className="mb-10 grid gap-4 md:grid-cols-2">

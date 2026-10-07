@@ -24,8 +24,10 @@ import {
 import {
   cashewGallery,
   journeySteps,
+  priceUpdatedOn,
   retailPackages,
   socialPosts,
+  standardKgPriceLabel,
   storyPillars,
   whatsappLink,
   wholesalePriceRanges,
@@ -55,7 +57,7 @@ export default async function HomePage() {
               Tanzanian Cashews. From Origin to Your Market.
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-8 text-[#4b5563]">
-              Quality cashew nuts sourced from Tanzania for retail customers, wholesalers and serious international buyers.
+              Quality cashew nuts sourced from Tanzania for retail customers, wholesalers and serious international buyers. Standard price for retail and wholesale: {standardKgPriceLabel}.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
@@ -114,7 +116,7 @@ export default async function HomePage() {
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#1a7a4d]">Latest cashew prices</p>
             <h2 className="mt-3 text-4xl font-bold text-[#0f3c2f]">Cashew prices</h2>
           </div>
-          <p className="text-xs text-[#4b5563]">Last updated: 2026-10-04</p>
+          <p className="text-xs text-[#4b5563]">Last updated: {priceUpdatedOn}</p>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-3">
@@ -123,7 +125,7 @@ export default async function HomePage() {
               <ShoppingBag size={18} />
             </div>
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#1a7a4d]">Retail price</p>
-            <h3 className="mt-5 text-2xl font-bold text-[#0f3c2f]">Retail</h3>
+            <h3 className="mt-5 text-2xl font-bold text-[#0f3c2f]">{standardKgPriceLabel}</h3>
             <div className="mt-5 space-y-3 text-sm text-[#374151]">
               {retailPackages.map((item) => (
                 <div key={item.packageName} className="flex items-center justify-between border-b border-[#edf1ee] pb-2 last:border-0">
@@ -140,7 +142,7 @@ export default async function HomePage() {
               <Boxes size={18} />
             </div>
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#1a7a4d]">Wholesale price</p>
-            <h3 className="mt-5 text-2xl font-bold text-[#0f3c2f]">Wholesale</h3>
+            <h3 className="mt-5 text-2xl font-bold text-[#0f3c2f]">{standardKgPriceLabel}</h3>
             <div className="mt-5 space-y-3 text-sm text-[#374151]">
               {wholesalePriceRanges.slice(0, 4).map((item) => (
                 <div key={item.quantity} className="flex items-center justify-between border-b border-[#edf1ee] pb-2 last:border-0">
@@ -174,7 +176,7 @@ export default async function HomePage() {
         </div>
 
         <p className="mt-6 text-xs text-[#4b5563]">
-          Prices are indicative and may change depending on grade, quantity, availability, destination and market conditions.
+          Standard local price for wholesale and retail is {standardKgPriceLabel}. Export prices for 15+ MT are quoted per inquiry.
         </p>
       </section>
 
@@ -240,9 +242,14 @@ export default async function HomePage() {
       </section>
 
       <section className="section-shell py-12 md:py-16">
-        <div className="mb-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#1a7a4d]">Cashew grades in stock</p>
-          <h2 className="mt-3 text-4xl font-bold text-[#0f3c2f]">See the nuts before you buy.</h2>
+        <div className="mb-8 flex items-end justify-between gap-3">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#1a7a4d]">Cashew gallery</p>
+            <h2 className="mt-3 text-4xl font-bold text-[#0f3c2f]">See the nuts before you buy.</h2>
+          </div>
+          <Link href="/gallery" className="hidden items-center gap-2 text-sm font-semibold text-[#0f3c2f] md:inline-flex">
+            <Camera size={16} /> Open gallery →
+          </Link>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
           {cashewGallery.map((item) => (
@@ -256,6 +263,11 @@ export default async function HomePage() {
               </div>
             </article>
           ))}
+        </div>
+        <div className="mt-6 md:hidden">
+          <Link href="/gallery" className="brand-button brand-button-secondary w-full justify-center">
+            Open gallery
+          </Link>
         </div>
       </section>
 

@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { connection } from "next/server";
-import { Leaf } from "lucide-react";
-import { retailPackages } from "@/lib/site-data";
+import { Gift, Images, Leaf, ShoppingBag, Truck } from "lucide-react";
+import { retailPackages, standardKgPriceLabel } from "@/lib/site-data";
 import { getProducts } from "@/lib/product-store";
 
 export default async function RetailPage() {
@@ -15,8 +15,16 @@ export default async function RetailPage() {
         <div>
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#1a7a4d]">Retail shop</p>
           <h1 className="text-4xl font-bold text-[#0f3c2f] md:text-5xl">Cashews for homes, gifts and daily use.</h1>
+          <p className="mt-4 max-w-2xl text-base text-[#4b5563]">
+            Standard retail price is {standardKgPriceLabel}. Smaller packs are priced from the same kilogram rate.
+          </p>
         </div>
-        <Link href="/products" className="brand-button brand-button-primary">Browse products</Link>
+        <div className="flex flex-col gap-3 sm:flex-row">
+          <Link href="/gallery" className="brand-button brand-button-secondary">
+            <Images size={16} className="mr-2" /> View stock gallery
+          </Link>
+          <Link href="/products" className="brand-button brand-button-primary">Browse products</Link>
+        </div>
       </div>
 
       <div className="mb-10 grid gap-4 md:grid-cols-3">
@@ -33,13 +41,13 @@ export default async function RetailPage() {
           <h2 className="mb-5 text-2xl font-semibold text-[#0f3c2f]">Popular retail sizes</h2>
           <div className="space-y-3">
             {retailPackages.map((pkg) => (
-              <div key={pkg.packageName} className="flex items-center justify-between rounded-2xl border border-[#dfe7e1] bg-[#f9faf8] p-4">
+              <div key={pkg.packageName} className="flex flex-col gap-3 rounded-2xl border border-[#dfe7e1] bg-[#f9faf8] p-4 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <p className="font-semibold text-[#0f3c2f]">{pkg.packageName}</p>
                   <p className="text-sm text-[#4b5563]">{pkg.availability}</p>
                 </div>
-                <div className="flex items-center gap-3">
-                  <p className="text-lg font-bold text-[#0f3c2f]">{pkg.price}</p>
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                  <p className="text-lg font-bold text-[#0f3c2f] sm:whitespace-nowrap">{pkg.price}</p>
                   <a
                     href={`https://wa.me/255712935493?text=${encodeURIComponent(`Hello Mwarabu Nuts, I am interested in ${pkg.packageName} of cashew nuts. Please confirm the price and availability.`)}`}
                     className="brand-button brand-button-primary"
@@ -55,10 +63,10 @@ export default async function RetailPage() {
         <div className="soft-card p-6">
           <h2 className="text-2xl font-semibold text-[#0f3c2f]">Customer journey</h2>
           <ul className="mt-5 space-y-4 text-sm leading-6 text-[#374151]">
-            <li>1. Browse products and see retail pricing.</li>
-            <li>2. Choose the package size that fits your household or gifting need.</li>
-            <li>3. Request delivery or order directly by WhatsApp.</li>
-            <li>4. Confirm the delivery location and receive stock information.</li>
+            <li className="flex items-start gap-2"><ShoppingBag size={16} className="mt-0.5 text-[#1a7a4d]" /> Browse products and see the standard {standardKgPriceLabel} retail rate.</li>
+            <li className="flex items-start gap-2"><Gift size={16} className="mt-0.5 text-[#1a7a4d]" /> Choose a pack size for home use or gifting.</li>
+            <li className="flex items-start gap-2"><Truck size={16} className="mt-0.5 text-[#1a7a4d]" /> Order on WhatsApp and share your delivery location.</li>
+            <li className="flex items-start gap-2"><Leaf size={16} className="mt-0.5 text-[#1a7a4d]" /> We confirm stock and arrange delivery.</li>
           </ul>
         </div>
       </div>
